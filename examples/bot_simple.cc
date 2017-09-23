@@ -19,8 +19,9 @@ public:
 
     virtual void OnStep() final {
         uint32_t game_loop = Observation()->GetGameLoop();
+        Debug()->DebugShowMap();
 
-        if (game_loop % 100 == 0) {
+        if (game_loop % 100 == 100) {
             sc2::Units units = Observation()->GetUnits(sc2::Unit::Alliance::Self);
             for (auto& it_unit : units) {
                 sc2::Point2D target = sc2::FindRandomLocation(Observation()->GetGameInfo());

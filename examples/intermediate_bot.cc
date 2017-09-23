@@ -17,6 +17,7 @@ int main(int argc, char* argv[]) {
     sc2::ZergMultiplayerBot bot2;
     sc2::TerranMultiplayerBot bot3;
 
+    coordinator.SetRealtime(true);
     coordinator.SetParticipants({
         CreateParticipant(sc2::Race::Protoss, &bot1),
         CreateComputer(sc2::Race::Terran,sc2::Difficulty::Hard)
